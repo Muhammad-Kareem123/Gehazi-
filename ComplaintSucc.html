@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تم تقديم الشكوى</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    /* Header */
+    .header{
+            padding: 20px;
+            text-align: center;
+            top: 0;
+            z-index: 100;
+            background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/f5e83996840749.Y3JvcCwxMzQyLDEwNTAsMjksMA.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            height: 400px; 
+            color:white;
+            text-align: center;
+        }
+        ul{
+          
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          border: 1px solid #e7e7e7;
+          background-color: #f3f3f3;
+          border-radius: 20px;
+      }
+      li{
+          float:right;
+      }
+      li a{
+          display: block;
+          color: #666;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+      }
+      li a:hover:not(.active) {
+          background-color: #ddd;
+       }
+
+           li a.active {
+          color: white;
+           background-color: #04AA6D;
+          }
+        .header h1{
+            margin-top: 100px;
+            font-weight: 900;
+            font-size: 60px;
+        }
+        .header p{
+            font-weight: 900;
+            font-size: 30px;
+
+        }
+        .header p,.header h1,.navbar{
+            position: relative;
+            z-index: 2;
+        }
+        .oVerlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 56.3%;
+            background: rgba(0, 0, 0, 0.6);
+            
+        }
+
+    /* Success Message */
+    .success {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .success .checkmark {
+      font-size: 80px;
+      color: green;
+    }
+
+    .success p {
+      font-size: 28px;
+      margin-top: 20px;
+      color: #000;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #0f1c55;
+      color: white;
+      padding: 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .footer .column {
+      min-width: 120px;
+      margin: 10px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    .language-selector {
+      margin-top: 15px;
+    }
+
+    .language-selector select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .social-icons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-icons i {
+      margin: 0 10px;
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="oVerlay"></div>
+    <div class="navbar">
+<ul>
+    <li><a href="">جهازي</a></li>
+    <li><a href="">الاخبار</a></li>
+    <li><a href="">حول</a></li>
+    <li><a href="">تواصل</a></li>
+    <li><a href="Landing_Page.html">الرئيسية</a></li>
+</ul>
+</div>
+<h1>الشكاوي</h1>
+<p>أكتب شكوتك</p>
+</div> 
+  <!-- Success Message -->
+  <div class="success">
+    <div class="checkmark"><img src="images (1).png" alt=""></div>
+    <p>تم تقديم شكوتك بنجاح</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="column">
+      <h4>المزيد</h4>
+      <p>سياسة الخصوصية</p>
+    </div>
+    <div class="column">
+      <h4>تواصل</h4>
+      <p>اتصل بنا</p>
+      <p>مركز المساعدة</p>
+    </div>
+    <div class="column">
+      <h4>عن جهازي</h4>
+      <p>الخدمات الأكثر طلباً</p>
+      <p>فريقنا</p>
+    </div>
+    <div class="column">
+      <h4>اللغة</h4>
+      <div class="language-selector">
+        <select>
+          <option>العربية</option>
+          <option>English</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <i class="fab fa-whatsapp"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-facebook"></i>
+  </div>
+
+</body>
+</html>

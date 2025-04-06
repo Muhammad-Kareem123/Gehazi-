@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>احجز دورك</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      background-color: #f4f4f4;
+     
+    }
+
+    .header {
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/f5e83996840749.Y3JvcCwxMzQyLDEwNTAsMjksMA.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      color: white;
+    }
+
+    .oVerlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .header-content h1 {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .header-content p {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f3f3f3;
+      border-radius: 20px;
+      position: relative;
+      z-index: 3;
+    }
+
+    li {
+      float: right;
+    }
+
+    li a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    li a:hover {
+      background-color: #ddd;
+    }
+
+    .active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 10px 20px;
+      font-size: 22px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .cancel {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      color: #333;
+    }
+
+    .next {
+      background-color: #0f1c55;
+      color: white;
+    }
+
+    .next:hover,
+    .cancel:hover {
+      opacity: 0.9;
+    }
+
+    .queue-info {
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      border: 1px solid black;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+    }
+
+    .queue-number {
+      color: #0070d1;
+      font-size: 42px;
+      margin-top: 10px;
+      display: block;
+    }
+    /* Footer */
+    .footer {
+      background-color: #0f1c55;
+      color: white;
+      padding: 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 50px;
+      margin-bottom: -40px;
+    }
+
+    .footer .column {
+      min-width: 120px;
+      margin: 10px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    .language-selector {
+      margin-top: 15px;
+    }
+
+    .language-selector select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .social-icons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-icons i {
+      margin: 0 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="oVerlay"></div>
+    <ul>
+      <li><a href="">جهازي</a></li>
+      <li><a href="newsPage.html">الأخبار</a></li>
+      <li><a href="">حول</a></li>
+      <li><a href="ComplaintPage.html">تواصل</a></li>
+      <li><a href="Landing_Page.html">الرئيسية</a></li>
+    </ul>
+    <div class="header-content">
+      <h1>احجز دورك</h1>
+      <p>إحجز رقم دورك بسهولة</p>
+    </div>
+  </div>
+
+  <h2>اختر الخدمة، احجز رقم الطابور، واحصل على إشعار بموعدك بكل سهولة!</h2>
+
+  <div class="container">
+    <h2>اختر الخدمة</h2>
+    <label for="service-select">نوع الخدمة:</label>
+    <select id="service-select">
+      <option value="">اختر خدمة</option>
+      <option value="service1">الخدمات العقارية</option>
+      <option value="service2">تقديم طلبات تراخيص البناء والهدم</option>
+      <option value="service3">تقديم طلبات التصالح في مخالفات البناء</option>
+    </select>
+    <div class="button-row">
+      <button type="button" class="cancel">إلغاء</button>
+      <button type="submit" class="next">التالي</button>
+    </div>
+  </div>
+
+  <div class="queue-info" id="queue-info" style="display: none;">
+    عدد الأشخاص في الطابور حالياً:
+    <span id="queue-number" class="queue-number">0</span>
+  </div>
+      <!-- Footer -->
+      <div class="footer">
+        <div class="column">
+          <h4>المزيد</h4>
+          <p>سياسة الخصوصية</p>
+        </div>
+        <div class="column">
+          <h4>تواصل</h4>
+          <p>اتصل بنا</p>
+          <p>مركز المساعدة</p>
+        </div>
+        <div class="column">
+          <h4>عن جهازي</h4>
+          <p>الخدمات الأكثر طلباً</p>
+          <p>فريقنا</p>
+        </div>
+        <div class="column">
+          <h4>اللغة</h4>
+          <div class="language-selector">
+            <select>
+              <option>العربية</option>
+              <option>English</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook"></i>
+      </div>
+  <script>
+    const queueNumber = 57; // Simulated number of people in queue
+    const serviceSelect = document.getElementById('service-select');
+    const queueInfo = document.getElementById('queue-info');
+    const queueNumberSpan = document.getElementById('queue-number');
+
+    serviceSelect.addEventListener('change', function () {
+      if (this.value) {
+        queueNumberSpan.textContent = queueNumber;
+        queueInfo.style.display = 'block';
+      } else {
+        queueInfo.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

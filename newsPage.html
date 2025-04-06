@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      direction: rtl;
+    }
+
+     .header{
+            padding: 20px;
+            top: 0;
+            z-index: 100;
+            background-image: url('Screenshot 2025-04-05 062725.png'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            height: 400px; 
+            color:white;
+            
+        }
+        ul{
+          
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          border: 1px solid #e7e7e7;
+          background-color: #f3f3f3;
+          border-radius: 20px;
+      }
+      li{
+          float:right;
+      }
+      li a{
+          display: block;
+          color: #666;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+      }
+      li a:hover:not(.active) {
+          background-color: #ddd;
+       }
+
+           li a.active {
+          color: white;
+           background-color: #04AA6D;
+          }
+      
+     
+        .header h1,.navbar{
+            position: relative;
+            z-index: 2;
+        }
+        .oVerlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 56.3%;
+            background: rgba(0, 0, 0, 0.4);
+            
+        }
+        .hero-content {
+      margin-top: 150px;
+      margin-right: 80px;
+    }
+
+    .hero-content h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+     
+    }
+
+    .hero-content .btn {
+      padding: 10px 25px;
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 25px;
+      font-size: 16px;
+      transition: 0.3s;
+      position: relative;
+      z-index: 1;
+     
+    }
+    .hero-content .btn:hover {
+      background-color: white;
+      color: #000; 
+      cursor:pointer;
+    }
+    .search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; /* adjust as needed */
+}
+
+.search {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* box shadow added */
+}
+
+.search input[type="text"] {
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+
+.search button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search button:hover {
+  background-color: #0056b3;
+}
+.card {
+  width: 350px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: right; /* Align content to the right */
+  width: 95%;
+}
+
+.card-header {
+  background-color:black; /* Top color bar */
+  height: 12px;
+  width: 100%;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+.card-body h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.card-body .btn {
+  padding: 10px 25px;
+  background-color:transparent;
+  color: black;
+  border: 1.4px black solid;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card-body .btn:hover {
+  background-color: black;
+  color: #e7e7e7;
+}
+ /* Footer */
+ .footer {
+      background-color: #0f1c55;
+      color: white;
+      padding: 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .footer .column {
+      min-width: 120px;
+      margin: 10px;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    .language-selector {
+      margin-top: 15px;
+    }
+
+    .language-selector select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .social-icons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-icons i {
+      margin: 0 10px;
+      font-size: 20px;
+    }
+</style>
+<body>
+    <!-- Header -->
+  <div class="header">
+    <div class="oVerlay"></div>
+    <div class="navbar">
+<ul>
+    <li><a href="">جهازي</a></li>
+    <li><a href="newsPage.html">الاخبار</a></li>
+    <li><a href="">حول</a></li>
+    <li><a href="ComplaintPage.html">تواصل</a></li>
+    <li><a href="Landing_Page.html">الرئيسية</a></li>
+</ul>
+</div>
+<div class="hero-content">
+    <h1>اعلم بجميع الأخبار عن مدينتك</h1>
+    <button class="btn">معرفة المزيد</button>
+  </div>
+</div> 
+<div class="search-container">
+<div class="search">
+    <input type="text" placeholder="ابحث عن أخبار مدينتك...">
+    <button class="cta">بحث</button>
+</div>
+</div>
+<div class="card">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <h2>انقطاع المياه في منطقة الـ 800</h2>
+      <p>صيانة شبكة المياه يوم الأربعاء من 5:00 مساءً حتى 10:00 مساءً. </p>
+      <button class="btn">اقرأ المزيد</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <h2>افتتاح  Café  الزهرة في المدينة</h2>
+      <p>كافيه جديد يقدم خصومات 20% بمناسبة الافتتاح!</p>
+      <button class="btn">اقرأ المزيد</button>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="column">
+      <h4>المزيد</h4>
+      <p>سياسة الخصوصية</p>
+    </div>
+    <div class="column">
+      <h4>تواصل</h4>
+      <p>اتصل بنا</p>
+      <p>مركز المساعدة</p>
+    </div>
+    <div class="column">
+      <h4>عن جهازي</h4>
+      <p>الخدمات الأكثر طلباً</p>
+      <p>فريقنا</p>
+    </div>
+    <div class="column">
+      <h4>اللغة</h4>
+      <div class="language-selector">
+        <select>
+          <option>العربية</option>
+          <option>English</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <i class="fab fa-whatsapp"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-facebook"></i>
+  </div>
+</body>
+</html>
