@@ -1,84 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جهازي - الأخبار</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #fff;
       direction: rtl;
     }
-
-     .header{
-            padding: 20px;
+    /* Header */
+    .header {
+      position: relative;
+      background-image: url('Screenshot 2025-04-05 062725.png');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      color: white;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .navbar {
+            position: sticky;
             top: 0;
-            z-index: 100;
-            background-image: url('Screenshot 2025-04-05 062725.png'); /* Replace with your image URL */
-            background-size: cover;
-            background-position: center;
-            height: 400px; 
-            color:white;
-            
-        }
-        ul{
-          
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          border: 1px solid #e7e7e7;
-          background-color: #f3f3f3;
-          border-radius: 20px;
-      }
-      li{
-          float:right;
-      }
-      li a{
-          display: block;
-          color: #666;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-      }
-      li a:hover:not(.active) {
-          background-color: #ddd;
-       }
+            background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+}
 
-           li a.active {
-          color: white;
-           background-color: #04AA6D;
-          }
-      
-     
-        .header h1,.navbar{
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 5px 15px;
+    direction: rtl;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li a {
+    color: #ddd;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    background-color: #04AA6D;
+    color: white;
+    
+}
+
+.hamburger {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .menu-toggle:checked ~ .nav-links {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+        padding-bottom: 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+.header h1 {
+            margin-top: 100px;
+            font-size: 2em;
             position: relative;
             z-index: 2;
         }
-        .oVerlay{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 56.3%;
-            background: rgba(0, 0, 0, 0.4);
-            
+        .header p {
+            font-size: 1.2em;
+            position: relative;
+            z-index: 2;
         }
-        .hero-content {
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
       margin-top: 150px;
       margin-right: 80px;
     }
-
     .hero-content h1 {
       font-size: 36px;
       margin-bottom: 20px;
-     
     }
-
     .hero-content .btn {
       padding: 10px 25px;
       background: transparent;
@@ -86,222 +149,211 @@
       border: 2px solid white;
       border-radius: 25px;
       font-size: 16px;
-      transition: 0.3s;
-      position: relative;
-      z-index: 1;
-     
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
     .hero-content .btn:hover {
       background-color: white;
-      color: #000; 
-      cursor:pointer;
+      color: #000;
+      transform: scale(1.05);
     }
     .search-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px; /* adjust as needed */
-}
-
-.search {
-  display: flex;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  width: 500px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* box shadow added */
-}
-
-.search input[type="text"] {
-  padding: 10px 15px;
-  width: 100%;
-  font-size: 16px;
-  outline: none;
-  border: none;
-}
-
-.search button {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  padding: 0 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.search button:hover {
-  background-color: #0056b3;
-}
-.card {
-  width: 350px;
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin: 50px auto;
-  font-family: Arial, sans-serif;
-  direction: rtl;
-  text-align: right; /* Align content to the right */
-  width: 95%;
-}
-
-.card-header {
-  background-color:black; /* Top color bar */
-  height: 12px;
-  width: 100%;
-}
-
-.card-body {
-  padding: 25px;
-}
-
-.card-body h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.card-body p {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 20px;
-}
-
-.card-body .btn {
-  padding: 10px 25px;
-  background-color:transparent;
-  color: black;
-  border: 1.4px black solid;
-  border-radius: 25px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.card-body .btn:hover {
-  background-color: black;
-  color: #e7e7e7;
-}
- /* Footer */
- .footer {
-      background-color: #0f1c55;
-      color: white;
-      padding: 30px 20px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
+      margin-top: 50px;
+      padding: 0 20px;
     }
-
-    .footer .column {
-      min-width: 120px;
-      margin: 10px;
+    .search {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
-    .footer h4 {
-      margin-bottom: 10px;
-    }
-
-    .footer p {
-      margin: 5px 0;
-    }
-
-    .language-selector {
-      margin-top: 15px;
-    }
-
-    .language-selector select {
-      padding: 5px 10px;
-      border-radius: 5px;
+    .search input[type="text"] {
+      padding: 10px 15px;
+      width: 100%;
+      font-size: 16px;
       border: none;
+      outline: none;
     }
-
-    .social-icons {
-      text-align: center;
-      margin-top: 20px;
+    .search button {
+      padding: 0 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
-    .social-icons i {
-      margin: 0 10px;
-      font-size: 20px;
+    .search button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
     }
-</style>
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 95%;
+      text-align: right;
+    }
+    .card-header {
+      background-color: black;
+      height: 12px;
+      width: 100%;
+    }
+    .card-body h2 {
+      font-size: 22px;
+      margin: 15px 0 10px;
+    }
+    .card-body p {
+      font-size: 16px;
+      color: #444;
+    }
+    .card-body .btn {
+      margin-top: 15px;
+      padding: 10px 25px;
+      background-color: transparent;
+      color: black;
+      border: 1.5px solid black;
+      border-radius: 25px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .card-body .btn:hover {
+      background-color: black;
+      color: white;
+      transform: scale(1.05);
+    }
+    /* Footer */
+    .footer {
+            background-color: #0a183d;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            padding: 20px;
+        }
+        .footer-column h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .footer-column p {
+            margin: 5px 0;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .footer-column p:hover {
+            color: #fff;
+        }
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .social-icons i {
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .social-icons i:hover {
+            color: #ddd;
+        }
+    @media (max-width: 768px) {
+      .hero-content {
+        margin-right: 20px;
+        margin-top: 100px;
+      }
+      .card {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
 <body>
-    <!-- Header -->
+  <!-- Header -->
   <div class="header">
-    <div class="oVerlay"></div>
-    <div class="navbar">
-<ul>
-    <li><a href="">جهازي</a></li>
-    <li><a href="newsPage.html">الاخبار</a></li>
-    <li><a href="">حول</a></li>
-    <li><a href="ComplaintPage.html">تواصل</a></li>
-    <li><a href="Landing_Page.html">الرئيسية</a></li>
-</ul>
-</div>
-<div class="hero-content">
-    <h1>اعلم بجميع الأخبار عن مدينتك</h1>
-    <button class="btn">معرفة المزيد</button>
+    <div class="overlay"></div>
+    <nav class="navbar">
+      <div class="navbar-container">
+          <div class="logo">
+              <a href="#">جهازي</a>
+          </div>
+          <input type="checkbox" id="menu-toggle" class="menu-toggle">
+          <label for="menu-toggle" class="hamburger">
+              <i class="fas fa-bars"></i>
+          </label>
+          <ul class="nav-links">
+              <li><a href="Landing_Page.html" >الرئيسية</a></li>
+              <li><a href="newsPage.html" class="active">الأخبار</a></li>
+              <li><a href="#">حول</a></li>
+              <li><a href="ComplaintPage.html">تواصل</a></li>
+              <li><a href="BookingPage.html">احجز دورك</a></li>
+          </ul>
+      </div>
+  </nav>
+    <div class="hero-content">
+      <h1>اعلم بجميع الأخبار عن مدينتك</h1>
+      <button class="btn"><i class="fas fa-info-circle"></i> معرفة المزيد</button>
+    </div>
   </div>
-</div> 
-<div class="search-container">
-<div class="search">
-    <input type="text" placeholder="ابحث عن أخبار مدينتك...">
-    <button class="cta">بحث</button>
-</div>
-</div>
-<div class="card">
+  <!-- Search -->
+  <div class="search-container">
+    <div class="search">
+      <input type="text" placeholder="ابحث عن أخبار مدينتك...">
+      <button class="cta"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+  <!-- News Cards -->
+  <div class="card">
     <div class="card-header"></div>
     <div class="card-body">
       <h2>انقطاع المياه في منطقة الـ 800</h2>
-      <p>صيانة شبكة المياه يوم الأربعاء من 5:00 مساءً حتى 10:00 مساءً. </p>
-      <button class="btn">اقرأ المزيد</button>
+      <p>صيانة شبكة المياه يوم الأربعاء من 5:00 مساءً حتى 10:00 مساءً.</p>
+      <button class="btn"><i class="fas fa-book-open"></i> اقرأ المزيد</button>
     </div>
   </div>
   <div class="card">
     <div class="card-header"></div>
     <div class="card-body">
-      <h2>افتتاح  Café  الزهرة في المدينة</h2>
+      <h2>افتتاح Café الزهرة في المدينة</h2>
       <p>كافيه جديد يقدم خصومات 20% بمناسبة الافتتاح!</p>
-      <button class="btn">اقرأ المزيد</button>
+      <button class="btn"><i class="fas fa-book-open"></i> اقرأ المزيد</button>
     </div>
   </div>
   <!-- Footer -->
-  <div class="footer">
-    <div class="column">
-      <h4>المزيد</h4>
-      <p>سياسة الخصوصية</p>
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>عن جهازي</h3>
+            <p>الخدمات الأكثر طلبًا</p>
+            <p>فريقنا</p>
+        </div>
+        <div class="footer-column">
+            <h3>تواصل</h3>
+            <p>اتصل بنا</p>
+            <p>مركز المساعدة</p>
+        </div>
     </div>
-    <div class="column">
-      <h4>تواصل</h4>
-      <p>اتصل بنا</p>
-      <p>مركز المساعدة</p>
+    <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
     </div>
-    <div class="column">
-      <h4>عن جهازي</h4>
-      <p>الخدمات الأكثر طلباً</p>
-      <p>فريقنا</p>
+    <div style="margin-top: 20px; font-size: 14px; color: #ccc;">
+        &copy; 2025 جهازي - جميع الحقوق محفوظة
     </div>
-    <div class="column">
-      <h4>اللغة</h4>
-      <div class="language-selector">
-        <select>
-          <option>العربية</option>
-          <option>English</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <!-- Social Icons -->
-  <div class="social-icons">
-    <i class="fab fa-whatsapp"></i>
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-facebook"></i>
-  </div>
+</footer>
 </body>
 </html>
